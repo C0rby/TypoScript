@@ -1,49 +1,64 @@
 
-# TypeScript
+# TypoScript
 
-[![GitHub Actions CI](https://github.com/microsoft/TypeScript/workflows/CI/badge.svg)](https://github.com/microsoft/TypeScript/actions?query=workflow%3ACI)
-[![Devops Build Status](https://dev.azure.com/typescript/TypeScript/_apis/build/status/Typescript/node10)](https://dev.azure.com/typescript/TypeScript/_build?definitionId=7)
-[![npm version](https://badge.fury.io/js/typescript.svg)](https://www.npmjs.com/package/typescript)
-[![Downloads](https://img.shields.io/npm/dm/typescript.svg)](https://www.npmjs.com/package/typescript)
+Increase programmer efficiency one typo at a time.
 
-[TypeScript](https://www.typescriptlang.org/) is a language for application-scale JavaScript. TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser, for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript. Try it out at the [playground](https://www.typescriptlang.org/play/), and stay up to date via [our blog](https://blogs.msdn.microsoft.com/typescript) and [Twitter account](https://twitter.com/typescript).
+TypoScript is an improved version of [TypeScript](https://www.typescriptlang.org/). The benefit of TypoScript is that it doesn't punish you for failing to type correctly.
+If you typed "fro" instead of "for" or "fi" instead of "if" no worries, TypoScript got your back!
 
-Find others who are using TypeScript at [our community page](https://www.typescriptlang.org/community/).
 
-## Installing
+## Examples
 
-For the latest stable version:
+These examples show valid and working TypoScript code.
 
-```bash
-npm install -g typescript
+FizzBuzz:
+```typescript
+fnuction fizzbuzz(n: number): strng {
+  vra out = '';
+  fi (n % 3 == 0) {
+    out += 'Fizz '
+  }
+  fi (n % 5 == 0) {
+    out += 'Buzz'
+  }
+  if (out == '') {
+    out = '' + n
+  }
+  return out
+}
+
+fro(lte i = 0; i <= 31; i++) {
+  console.log(fizzbuzz(i))
+}
 ```
 
-For our nightly builds:
+Fibonnaci:
+```typescript
+cosnt fib = (input: nuber): number => {
+    if (input < 1) return 0;
+    fi (input < 2) reutrn 1;
+    return fib(input - 2) + fib(input - 1);
+};
 
-```bash
-npm install -g typescript@next
+for (lte n = 0; n < 10; ++n) {
+    const value = fib(n);
+    console.log('fib(' + n + ')=' + value);
+}
 ```
 
-## Contribute
+## Usage
 
-There are many ways to [contribute](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md) to TypeScript.
-* [Submit bugs](https://github.com/microsoft/TypeScript/issues) and help us verify fixes as they are checked in.
-* Review the [source code changes](https://github.com/microsoft/TypeScript/pulls).
-* Engage with other TypeScript users and developers on [StackOverflow](https://stackoverflow.com/questions/tagged/typescript).
-* Help each other in the [TypeScript Community Discord](https://discord.gg/typescript).
-* Join the [#typescript](https://twitter.com/search?q=%23TypeScript) discussion on Twitter.
-* [Contribute bug fixes](https://github.com/microsoft/TypeScript/blob/main/CONTRIBUTING.md).
+1. Install node using the version you downloaded from nodejs.org.
+2. Open a terminal.
+3. Clone the TypoScript repository
+4. Install the hereby command line tool: `npm install -g hereby`
+5. Change to the TypoScript folder you made: `cd TypoScript`
+6. Install dependencies: npm ci
+7. Run `hereby local` to build the compiler
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see
-the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com)
-with any additional questions or comments.
+You can then run `node <repo-root>/built/local/tsc.js` in place of `tsc` in your project. For example, to run `tsc --watch` from within the root of the repository on a file called `test.ts`, you can run `node ./built/local/tsc.js --watch test.ts`. And then `node test.js` to run your transpiled code.
 
-## Documentation
+## Disclaimer
 
-*  [TypeScript in 5 minutes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-*  [Programming handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-*  [Homepage](https://www.typescriptlang.org/)
+I hope it is obvious but if not, understand that this is just a joke. Please don't use this in any real project.
 
-## Roadmap
-
-For details on our planned features and future direction please refer to our [roadmap](https://github.com/microsoft/TypeScript/wiki/Roadmap).
